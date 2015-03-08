@@ -4,3 +4,9 @@ D:\ProjectLP1\SpacedRepetitionSoftware\SpacedRepetitionSoftware\obj\Debug\Spaced
 D:\ProjectLP1\SpacedRepetitionSoftware\SpacedRepetitionSoftware\obj\Debug\SpacedRepetitionSoftware.dll
 D:\ProjectLP1\SpacedRepetitionSoftware\SpacedRepetitionSoftware\obj\Debug\SpacedRepetitionSoftware.pdb
 D:\ProjectLP1\SpacedRepetitionSoftware\SpacedRepetitionSoftware\bin\SpacedRepetitionSoftware.dll.config
+D:\ProjectLP1\ProjectLP1-FATEC\Front-End\SpacedRepetitionSoftware\SpacedRepetitionSoftware\bin\SpacedRepetitionSoftware.dll.config
+D:\ProjectLP1\ProjectLP1-FATEC\Front-End\SpacedRepetitionSoftware\SpacedRepetitionSoftware\bin\SpacedRepetitionSoftware.dll
+D:\ProjectLP1\ProjectLP1-FATEC\Front-End\SpacedRepetitionSoftware\SpacedRepetitionSoftware\bin\SpacedRepetitionSoftware.pdb
+D:\ProjectLP1\ProjectLP1-FATEC\Front-End\SpacedRepetitionSoftware\SpacedRepetitionSoftware\obj\Debug\SpacedRepetitionSoftware.csprojResolveAssemblyReference.cache
+D:\ProjectLP1\ProjectLP1-FATEC\Front-End\SpacedRepetitionSoftware\SpacedRepetitionSoftware\obj\Debug\SpacedRepetitionSoftware.dll
+D:\ProjectLP1\ProjectLP1-FATEC\Front-End\SpacedRepetitionSoftware\SpacedRepetitionSoftware\obj\Debug\SpacedRepetitionSoftware.pdb
