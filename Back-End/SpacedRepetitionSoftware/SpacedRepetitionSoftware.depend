@@ -68,3 +68,15 @@
 
 1402474244 c:\program files (x86)\mysql\mysql connector.c 6.1\include\mysql\psi\psi_base.h
 
+1425760573 source:d:\projectlp1\projectlp1-fatec\back-end\spacedrepetitionsoftware\exemplo_conexao_com_banco_de_dados.c
+	<mysql.h>
+	<stdio.h>
+
+1425772639 source:d:\projectlp1\projectlp1-fatec\back-end\spacedrepetitionsoftware\main.c
+	<stdio.h>
+
+1425772633 source:d:\projectlp1\projectlp1-fatec\back-end\spacedrepetitionsoftware\exemplo_conexao_mysql.c
+	<windows.h>
+	<mysql.h>
+	<stdio.h>
+
