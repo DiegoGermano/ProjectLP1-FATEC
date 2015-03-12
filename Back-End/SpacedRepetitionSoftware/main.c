@@ -6,7 +6,7 @@ int main(int argc, char *argv[])
 	int i;
 	printf("Content-type: text/plain\n\n");
 
-	printf("DIEGO GERMANO 2");
+	printf("DIEGO GERMANO");
 
 	for(i=1; i<argc; i++)
 	{
