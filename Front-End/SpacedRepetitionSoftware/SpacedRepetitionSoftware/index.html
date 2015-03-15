@@ -11,7 +11,7 @@
 
         <div ng-controller="mainController">
 
-            <form name="deck" id="deck">
+            <form role="form"  name="deckForm">
 
                 Descricao:
                 <input ng-model="deck.descricao" type="text">
@@ -19,8 +19,8 @@
                 Dificuldade:
                 <input ng-model="deck.dificuldade" type="text">
 
-                Idioma: 
-                <input ng-model="deck.idioma" type="text" >
+                Idioma:
+                <input ng-model="deck.idioma" type="text">
 
                 <button type="submit" ng-click="cadastrarDeck(deck)"> Cadastrar </button>
 
