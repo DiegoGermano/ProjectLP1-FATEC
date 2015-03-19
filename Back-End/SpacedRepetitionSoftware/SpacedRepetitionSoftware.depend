@@ -1,8 +1,9 @@
 # depslib dependency file v1.0
-1426382300 source:d:\projectlp1\projectlp1-fatec\back-end\spacedrepetitionsoftware\main.c
+1426731147 source:d:\projectlp1\projectlp1-fatec\back-end\spacedrepetitionsoftware\main.c
 	<stdio.h>
 	<mysql.h>
 	<string.h>
+	<time.h>
 	<windows.h>
 	<mysql.h>
 	<stdio.h>
