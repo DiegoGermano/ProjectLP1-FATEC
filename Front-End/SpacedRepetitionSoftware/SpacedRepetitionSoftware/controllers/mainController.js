@@ -11,11 +11,13 @@ app.controller('mainController', function ($scope, $http, $location) {
 
     $scope.contacts = [];
 
+   
+
     //login
 
     $scope.logIn = function (user) {
 
-        $http.get($scope.servidor + $scope.ROUTE_CAD_LOGI + user.email + "/" + user.password).
+        $http.get($scope.servidor + $scope.ROUTE_CAD_LOGI + JSON.stringify(user)).
 
         success(function (data, status, headers, config) {
 
@@ -48,9 +50,11 @@ app.controller('mainController', function ($scope, $http, $location) {
     //Creators
     $scope.cadastrarUser = function (user) {
 
-        $http.get($scope.servidor + $scope.ROUTE_CAD_USER + JSON.stringify(user)).
+        $http.get($scope.servidor + $scope.ROUTE_CAD_USER + JSON.stringify(user) +"&121dsa2d41sa2d1sa2x2x4asd2sa1xas45dx1as2").
 
         success(function (data, status, headers, config) {
+
+            console.log(data);
 
             for (var i = 0; i < $scope.contacts.length ; i++) {
 
@@ -112,6 +116,3 @@ app.controller('mainController', function ($scope, $http, $location) {
         });
     };
 });
-
-
-
