@@ -1,0 +1,56 @@
+﻿<div>
+    <h1>Register</h1>
+
+    <h1>Usuario</h1>
+
+    <form role="form" name="userForm">
+
+        Nome:
+        <input ng-model="user.nome" type="text">
+
+        Email:
+        <input ng-model="user.email" type="text">
+
+        Senha:
+        <input ng-model="user.senha" type="password">
+
+        <button type="submit" ng-click="cadastrarUser(user)"> Cadastrar </button>
+
+    </form>
+
+    <h3>Contato Usuario</h3>
+
+    <form role="form" name="contactForm">
+
+        Descricao:
+        <input ng-model="contact.descricao" type="text" placeholder="ex: skype">
+
+        Valor:
+        <input ng-model="contact.valor" type="text" placeholder="skype name">
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Descrição</th>
+                    <th>Valor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="x in contacts">
+                    <td>{{x.descricao}}</td>
+                    <td>{{x.valor}}</td>
+
+                    <td>
+                        <a href="" ng-click="removeContact(x)"> Remover</a>
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+
+
+        <button type="submit" ng-click="addContact(contact)"> Add Contato </button>
+
+    </form>
+
+</div>

@@ -1,126 +1,42 @@
 ﻿<!DOCTYPE html>
 
-<html lang="en" ng-app="app">
+<html ng-app="app">
 
 <head>
-    <title>content</title>
-    <meta charset="utf-8">
+
+    <title>title</title>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+
+
+    <script src="app/app.js"></script>
+    <script src="app/controllers/domainController.js"></script>
+    <script src="app/controllers/loginController.js"></script>
+    <script src="app/controllers/homeController.js"></script>
+    <script src="app/controllers/userController.js"></script>
+
 </head>
 
 <body>
 
-    <div ng-controller="mainController">
+    <nav id="menu">
+        <ul>
+            <li ng-class="{active: activetab == '/'}"><a href="/home">Home</a></li>
+            <li ng-class="{active: activetab == '/login'}"><a href="/login">Login</a></li>
+            <li ng-class="{active: activetab == '/user'}"><a href="/user">Register</a></li>
+            <li ng-class="{active: activetab == '/domain'}"><a href="/domain">Go to Domain (temp)</a></li>
+        </ul>
+    </nav>
 
-        <h1>Logar</h1>
+    <div id="main">
 
-        <form role="form" name="loginForm">
-
-            Email:
-            <input ng-model="user.email" type="text">
-
-            Senha:
-            <input ng-model="user.password" type="password">
-
-            <button type="submit" ng-click="logIn(user)"> Logar </button>
-
-        </form>
-
-
-        <h1>Usuario</h1>
-
-        <form role="form" name="userForm">
-
-            Nome:
-            <input ng-model="user.nome" type="text">
-
-            Email:
-            <input ng-model="user.email" type="text">
-
-            Senha:
-            <input ng-model="user.senha" type="password">
-
-            <button type="submit" ng-click="cadastrarUser(user)"> Cadastrar </button>
-
-        </form>
-
-        <h3>Contato Usuario</h3>
-
-        <form role="form" name="contactForm">
-
-            Descricao:
-            <input ng-model="contact.descricao" type="text" placeholder="ex: skype">
-
-            Valor:
-            <input ng-model="contact.valor" type="text" placeholder="skype name">
-
-            <table>
-                <thead>
-                    <tr>
-                        <th>Descrição</th>
-                        <th>Valor</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr  ng-repeat="x in contacts">
-                        <td>{{x.descricao}}</td>
-                        <td>{{x.valor}}</td>
-
-                        <td>
-                            <a href="" ng-click="removeContact(x)"> Remover</a>
-                        </td>
-                    </tr>
-                </tbody>
-
-            </table>
-
-
-            <button type="submit" ng-click="addContact(contact)"> Add Contato </button>
-
-        </form>
-
-
-        <h1>Baralhos</h1>
-
-        <form role="form" name="deckForm">
-
-            Descricao:
-            <input ng-model="deck.descricao" type="text">
-
-            Dificuldade:
-            <input ng-model="deck.dificuldade" type="text">
-
-            Idioma:
-            <input ng-model="deck.idioma" type="text">
-
-            <button type="submit" ng-click="cadastrarDeck(deck)"> Cadastrar </button>
-
-        </form>
-
-        <h1>Frases</h1>
-
-        <form role="form" name="wordForm">
-
-            Front:
-            <input ng-model="word.front" type="text">
-
-            Back:
-            <input ng-model="word.back" type="text">
-
-            Nivel:
-            <input ng-model="word.nivel" type="number">
-
-            <button type="submit" ng-click="cadastrarWord(word)"> Cadastrar </button>
-
-        </form>
+        <div ng-view></div>
 
     </div>
 
-    <script src="js/angular.min.js"></script>
+    <footer class="text-center"></footer>
 
-    <script type="text/javascript">
-        var app = angular.module('app', []);
-    </script>
-
-    <script src="controllers/mainController.js"></script>
 </body>
+
 </html>

@@ -60,10 +60,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="controllers\mainController.js" />
+    <Content Include="app\app.js" />
+    <Content Include="app\controllers\domainController.js" />
+    <Content Include="app\controllers\loginController.js" />
+    <Content Include="app\controllers\userController.js" />
+    <Content Include="app\controllers\homeController.js" />
+    <Content Include="app\views\domain.html" />
+    <Content Include="app\views\home.html" />
+    <Content Include="app\views\login.html" />
+    <Content Include="app\views\user.html" />
     <Content Include="index.html" />
     <Content Include="js\angular.min.js" />
-    <Content Include="login.html" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="js\angular.min.js.map" />
