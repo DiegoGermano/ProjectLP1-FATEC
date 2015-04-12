@@ -1,38 +1,52 @@
-﻿<div>
-    <h1>Register</h1>
+﻿<div class="full-form">
 
     <h1>Usuario</h1>
 
-    <form role="form" name="userForm">
+    <form name="userForm">
 
-        Nome:
-        <input ng-model="user.nome" type="text">
+        <div class="input-group">
+            <input ng-model="user.nome" type="text">
+            <label>Nome</label>
+        </div>
 
-        Email:
-        <input ng-model="user.email" type="text">
+        <div class="input-group">
+            <input ng-model="user.email" type="text">
+            <label>Email</label>
+        </div>
 
-        Senha:
-        <input ng-model="user.senha" type="password">
+        <div class="input-group">
+            <input ng-model="user.senha" type="password">
+            <label>Senha</label>
+        </div>
 
-        <button type="submit" ng-click="cadastrarUser(user)"> Cadastrar </button>
+        <input type="submit" ng-click="cadastrarUser(user)" value="Cadastrar " />
 
     </form>
 
     <h3>Contato Usuario</h3>
 
-    <form role="form" name="contactForm">
+    <form name="contactForm">
 
-        Descricao:
-        <input ng-model="contact.descricao" type="text" placeholder="ex: skype">
+        <div class="input-group">
+            <input ng-model="contact.descricao" type="text">
+            <label>Tipo ex: skype</label>
+        </div>
 
-        Valor:
-        <input ng-model="contact.valor" type="text" placeholder="skype name">
+        <div class="input-group">
+            <input ng-model="contact.valor" type="text">
+            <label>Contato ex: skype name</label>
+        </div>
 
+        <input type="submit" ng-click="addContact(contact)" value="Add Contato" />
+
+        <br /><br /><br /><hr /><br />
         <table>
+
+
             <thead>
                 <tr>
-                    <th>Descrição</th>
-                    <th>Valor</th>
+                    <th>Tipo</th>
+                    <th>Contato</th>
                 </tr>
             </thead>
             <tbody>
@@ -49,8 +63,6 @@
         </table>
 
 
-        <button type="submit" ng-click="addContact(contact)"> Add Contato </button>
 
     </form>
-
 </div>

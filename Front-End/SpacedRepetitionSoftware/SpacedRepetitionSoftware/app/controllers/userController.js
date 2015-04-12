@@ -1,5 +1,7 @@
 ﻿app.controller('userController', function ($scope, $http, $location) {
 
+    initializeJQueryEvents();
+
     $scope.servidor = 'http://127.0.0.1:82/cgi-bin/SpacedRepetitionSoftware.exe?';
 
     $scope.ROUTE_CAD_USER = "cre/user/";
@@ -50,5 +52,4 @@
 
         $scope.contacts.splice($scope.contacts.indexOf(contact), 1);
     };
-
 });

@@ -9,16 +9,26 @@
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
 
-
     <script src="app/app.js"></script>
     <script src="app/controllers/domainController.js"></script>
     <script src="app/controllers/loginController.js"></script>
     <script src="app/controllers/homeController.js"></script>
     <script src="app/controllers/userController.js"></script>
 
+
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+
 </head>
 
 <body>
+
+    <header>
+
+        <h1>
+            Trabalho FATEC Sistema de Repetição espaçada
+        </h1>
+
+    </header>
 
     <nav id="menu">
         <ul>
@@ -27,15 +37,20 @@
             <li ng-class="{active: activetab == '/user'}"><a href="/user">Register</a></li>
             <li ng-class="{active: activetab == '/domain'}"><a href="/domain">Go to Domain (temp)</a></li>
         </ul>
+        <div class="handle">Menu</div>
     </nav>
 
-    <div id="main">
+    <section id="main">
 
         <div ng-view></div>
 
-    </div>
+    </section>
 
     <footer class="text-center"></footer>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    <script src="js/global.js"></script>
 
 </body>
 

@@ -1,10 +1,31 @@
 # depslib dependency file v1.0
-1426806635 source:d:\projectlp1\projectlp1-fatec\back-end\spacedrepetitionsoftware\main.c
+1428874540 source:d:\projectlp1\projectlp1-fatec\back-end\spacedrepetitionsoftware\main.c
 	<stdio.h>
 	<mysql.h>
 	<string.h>
 	<time.h>
+	"utilities.h"
+	"builders.h"
+	"serviceCreate.h"
+	"serviceUpdate.h"
+	"serviceDelete.h"
+	"serviceRead.h"
+	"serviceLogin.h"
 	<windows.h>
 	<mysql.h>
 	<stdio.h>
+
+1428873365 d:\projectlp1\projectlp1-fatec\back-end\spacedrepetitionsoftware\utilities.h
+
+1428873988 d:\projectlp1\projectlp1-fatec\back-end\spacedrepetitionsoftware\builders.h
+
+1428874195 d:\projectlp1\projectlp1-fatec\back-end\spacedrepetitionsoftware\servicecreate.h
+
+1428874396 d:\projectlp1\projectlp1-fatec\back-end\spacedrepetitionsoftware\serviceupdate.h
+
+1428874410 d:\projectlp1\projectlp1-fatec\back-end\spacedrepetitionsoftware\servicedelete.h
+
+1428874419 d:\projectlp1\projectlp1-fatec\back-end\spacedrepetitionsoftware\serviceread.h
+
+1428874770 d:\projectlp1\projectlp1-fatec\back-end\spacedrepetitionsoftware\servicelogin.h
 

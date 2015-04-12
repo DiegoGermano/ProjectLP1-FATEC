@@ -1,19 +1,17 @@
-﻿<div>
+﻿<div class="full-form">
+    <form name="loginForm">
 
-    <h1>Logar</h1>
+        <div class="input-group">
+            <input ng-model="user.email" type="text">
+            <label>Email</label>
+        </div>
 
+        <div class="input-group">
+            <input ng-model="user.password" type="password">
+            <label>Senha</label>
+        </div>
 
-    <form role="form" name="loginForm">
-
-        Email:
-        <input ng-model="user.email" type="text">
-
-        Senha:
-        <input ng-model="user.password" type="password">
-
-        <button type="submit" ng-click="logIn(user)"> Logar </button>
+        <input type="submit" ng-click="logIn(user)" value=" Logar " />
 
     </form>
-
-
 </div>

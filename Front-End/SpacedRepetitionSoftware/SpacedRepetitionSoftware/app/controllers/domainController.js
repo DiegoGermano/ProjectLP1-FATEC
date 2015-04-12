@@ -1,5 +1,7 @@
 ﻿app.controller('domainController', function ($scope, $http, $location) {
 
+    initializeJQueryEvents();
+
     $scope.servidor = 'http://127.0.0.1:82/cgi-bin/SpacedRepetitionSoftware.exe?';
 
     $scope.ROUTE_CAD_DECK = "cre/deck/";

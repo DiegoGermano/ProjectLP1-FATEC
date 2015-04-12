@@ -31,9 +31,16 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="builders.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="serviceCreate.h" />
+		<Unit filename="serviceDelete.h" />
+		<Unit filename="serviceLogin.h" />
+		<Unit filename="serviceRead.h" />
+		<Unit filename="serviceUpdate.h" />
+		<Unit filename="utilities.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
