@@ -2,6 +2,7 @@
 #include <mysql.h>
 #include <string.h>
 #include <time.h>
+#include "repository.h"
 #include "utilities.h"
 #include "builders.h"
 #include "serviceCreate.h"
@@ -17,6 +18,7 @@ int main(int argc, char *argv[])
     // remember to take out some characters
 
     printf("Content-type: text/plain\n\n");
+
 
     //Split parameters to get token and data
 
@@ -45,10 +47,11 @@ int main(int argc, char *argv[])
     }
     else
     {
-        if((strstr(argv[1], "log/logi/") == NULL) &&  (strstr(argv[1], "cre/user/") == NULL))
+
+        if((strstr(argv[1], "log/logi/") == NULL) &&  (strstr(argv[1], "cre/user/") == NULL) && (strstr(argv[1], "cre/cont/") == NULL))
         {
-            printf("Access denied 0x45678558");
-            return;
+            //printf("Access denied 0x45678558");
+            //return;
         }
 
     }

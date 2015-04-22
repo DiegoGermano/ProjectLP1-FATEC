@@ -57,11 +57,13 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\model.css" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\app.js" />
     <Content Include="app\controllers\domainController.js" />
+    <Content Include="app\controllers\menuController.js" />
     <Content Include="app\controllers\loginController.js" />
     <Content Include="app\controllers\userController.js" />
     <Content Include="app\controllers\homeController.js" />
@@ -69,8 +71,10 @@
     <Content Include="app\views\home.html" />
     <Content Include="app\views\login.html" />
     <Content Include="app\views\user.html" />
+    <Content Include="css\tables.css" />
     <Content Include="css\style.css" />
     <Content Include="index.html" />
+    <Content Include="js\angular-route.js" />
     <Content Include="js\angular.min.js" />
   </ItemGroup>
   <ItemGroup>

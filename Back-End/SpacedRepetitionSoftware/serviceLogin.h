@@ -11,18 +11,9 @@ void Login(char *str)
     //ROTAS DECK/WROD/USER
     if(str[4] == 'l' && str[5] == 'o' && str[6] == 'g' && str[7] == 'i' && str[8] == '/')
     {
+        MYSQL *con = OpenConnection();
 
-        MYSQL *con = mysql_init(NULL);
-
-        if (mysql_real_connect(con, "127.0.0.1", "root", "lexos2009","spacedrepetition", 0, NULL, 0) == NULL) finish_with_error(con);
-
-        if (mysql_query(con,cmdSelect))
-            finish_with_error(con);
-
-
-        MYSQL_RES *result = mysql_store_result(con);
-
-        if (result == NULL)  finish_with_error(con);
+        MYSQL_RES *result = ExecQueryCommand(con,cmdSelect);
 
         int num_fields = mysql_num_fields(result);
         int i, j;
@@ -60,8 +51,7 @@ void Login(char *str)
         char cmdDelete[200] = "DELETE FROM AccessUser WHERE user_id = ";
         strcat(cmdDelete,user_id);
 
-        if (mysql_query(con, cmdDelete)) finish_with_error(con);
-
+        ExecCommand(con, cmdDelete);
 
         char * tokenTemp = GenarateToken();
         char token[50];
@@ -78,10 +68,9 @@ void Login(char *str)
         strcat(cmdInsert,user_id);
         strcat(cmdInsert,")");
 
-        if (mysql_query(con, cmdInsert)) finish_with_error(con);
+        ExecCommand(con, cmdInsert);
 
-
-        printf("\n\Without erros :)  %s", token);
+        printf("\n\Without erros teste fatec :)  %s", token);
 
          mysql_free_result(result);
         mysql_close(con);

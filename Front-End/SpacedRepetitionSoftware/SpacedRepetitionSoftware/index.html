@@ -9,14 +9,20 @@
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
 
+ 
+
     <script src="app/app.js"></script>
     <script src="app/controllers/domainController.js"></script>
     <script src="app/controllers/loginController.js"></script>
     <script src="app/controllers/homeController.js"></script>
     <script src="app/controllers/userController.js"></script>
+    <script src="app/controllers/menuController.js"></script>
 
-
+    <link href="css/model.css" rel="stylesheet" type="text/css" />
     <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/tables.css" rel="stylesheet" type="text/css">
+
+    
 
 </head>
 
@@ -30,15 +36,25 @@
 
     </header>
 
-    <nav id="menu">
-        <ul>
-            <li ng-class="{active: activetab == '/'}"><a href="/home">Home</a></li>
-            <li ng-class="{active: activetab == '/login'}"><a href="/login">Login</a></li>
-            <li ng-class="{active: activetab == '/user'}"><a href="/user">Register</a></li>
-            <li ng-class="{active: activetab == '/domain'}"><a href="/domain">Go to Domain (temp)</a></li>
-        </ul>
-        <div class="handle">Menu</div>
-    </nav>
+    <div ng-controller="menuController">
+
+        <nav id="menu">
+
+            <ul ng-show="UserService.token == 'empty'">
+                <li ng-class="{active: activetab == '/'}"><a href="/home">Home</a></li>
+                <li ng-class="{active: activetab == '/login'}"><a href="/login">Login</a></li>
+                <li ng-class="{active: activetab == '/user'}"><a href="/user">Register</a></li>
+            </ul>
+            <ul ng-show="UserService.token != 'empty'">
+                <li ng-class="{active: activetab == '/domain'}"><a href="/domain">Decks</a></li>
+                <li ng-class="{active: activetab == '/cadastre'}"><a href="/cadastre">New Deck</a></li>
+            </ul>
+
+            <div class="handle">Menu</div>
+        </nav>
+
+    </div>
+
 
     <section id="main">
 
@@ -48,9 +64,13 @@
 
     <footer class="text-center"></footer>
 
+
+  
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
     <script src="js/global.js"></script>
+
+
 
 </body>
 

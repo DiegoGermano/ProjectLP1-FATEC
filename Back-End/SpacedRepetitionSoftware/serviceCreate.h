@@ -1,45 +1,65 @@
 
 void CreateDeck(char *str)
 {
-    char *result = buildCmdInsert(str , "Deck");
+    char *cmdInsert = buildCmdInsert(str , "Deck");
 
-    printf("\n\n%s\n", result);
+    printf("DECKCREATED %s", cmdInsert);
+    MYSQL *con = OpenConnection();
 
-    return 0;
-      MYSQL *con = mysql_init(NULL);
-      if (con == NULL)
-      {
-          fprintf(stderr, "mysql_init() failed\n");
-          exit(1);
-      }
-      if (mysql_real_connect(con, "127.0.0.1", "root", "lexos2009","spacedrepetition", 0, NULL, 0) == NULL) finish_with_error(con);
-      if (mysql_query(con, "insert into deck (dificuldade, modifiedOn, CreatedOn, Ativado, descricao, Deck_Id) values (1,NOW(),NOW(),1,'uhUuuuuuuuuUUuuUuu',5)")) finish_with_error(con);
-      printf("Congratilations one deck was created :)");
+    ExecCommand(con, cmdInsert);
+
+
+
 }
 
 void CreateWord(char *str)
 {
-    char *result = buildCmdInsert(str , "Word");
+    char *cmdInsert = buildCmdInsert(str , "Word");
 
-    printf("\n\n%s\n", result);
+    MYSQL *con = OpenConnection();
+
+    ExecCommand(con, cmdInsert);
+
+    printf("WORDCREATED");
 
     return 0;
 }
 
 void CreateUser(char *str)
 {
-    char *result = buildCmdInsert(str , "User");
 
-    printf("666");
+    char *cmdInsert = buildCmdInsert(str , "User");
+
+    MYSQL *con = OpenConnection();
+
+    ExecCommand(con, cmdInsert);
+
+    MYSQL_RES *result = ExecQueryCommand(con, "SELECT MAX(Id) from user");
+
+    int num_fields = mysql_num_fields(result);
+    int i, j;
+    MYSQL_ROW row;
+
+    while ((row = mysql_fetch_row(result)))
+    {
+      for(i = 0; i < num_fields; i++)
+      {
+          printf("%s",row[0]);
+      }
+    }
 
     return 0;
 }
 
 void CreateContact(char *str)
 {
-    char *result = buildCmdInsert(str , "Contact");
+    char *cmdInsert = buildCmdInsert(str , "Contact");
 
-    printf("\n\n%s\n", result);
+    MYSQL *con = OpenConnection();
+
+    ExecCommand(con, cmdInsert);
+
+    printf("CONTACTREGISTERED");
 
     return 0;
 }

@@ -1,4 +1,4 @@
-﻿app.controller('loginController', function ($scope, $http, $location) {
+﻿app.controller('loginController', function ($scope, $http, $location, UserService) {
 
     initializeJQueryEvents();
 
@@ -11,14 +11,22 @@
         $http.get($scope.servidor + $scope.ROUTE_CAD_LOGI + JSON.stringify(user)).
 
         success(function (data, status, headers, config) {
+            
+            
+            if (data.indexOf("denied") > -1) {
+                alert("Usuario ou senha invalido");
+                return;
+            }
 
-            console.log(data);
+            UserService.token = data;
+
+            $location.path("/domain");
+
 
         }).
 
         error(function (data, status, headers, config) {
 
-            console(data);
             alert('erro: ' + data);
 
         });

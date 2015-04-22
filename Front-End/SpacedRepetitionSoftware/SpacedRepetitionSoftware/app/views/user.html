@@ -5,17 +5,17 @@
     <form name="userForm">
 
         <div class="input-group">
-            <input ng-model="user.nome" type="text">
+            <input ng-model="user.name" type="text">
             <label>Nome</label>
         </div>
 
         <div class="input-group">
-            <input ng-model="user.email" type="text">
+            <input ng-model="user.email" type="email">
             <label>Email</label>
         </div>
 
         <div class="input-group">
-            <input ng-model="user.senha" type="password">
+            <input ng-model="user.password" type="password">
             <label>Senha</label>
         </div>
 
@@ -28,12 +28,12 @@
     <form name="contactForm">
 
         <div class="input-group">
-            <input ng-model="contact.descricao" type="text">
+            <input ng-model="contact.description" type="text">
             <label>Tipo ex: skype</label>
         </div>
 
         <div class="input-group">
-            <input ng-model="contact.valor" type="text">
+            <input ng-model="contact.value" type="text">
             <label>Contato ex: skype name</label>
         </div>
 
@@ -51,8 +51,8 @@
             </thead>
             <tbody>
                 <tr ng-repeat="x in contacts">
-                    <td>{{x.descricao}}</td>
-                    <td>{{x.valor}}</td>
+                    <td>{{x.description}}</td>
+                    <td>{{x.value}}</td>
 
                     <td>
                         <a href="" ng-click="removeContact(x)"> Remover</a>

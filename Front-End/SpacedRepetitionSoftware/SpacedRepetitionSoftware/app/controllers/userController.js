@@ -1,4 +1,5 @@
-﻿app.controller('userController', function ($scope, $http, $location) {
+﻿app.controller('userController', function ($scope, $http, $location, UserService) {
+
 
     initializeJQueryEvents();
 
@@ -11,15 +12,19 @@
 
     $scope.cadastrarUser = function (user) {
 
-        $http.get($scope.servidor + $scope.ROUTE_CAD_USER + JSON.stringify(user) + "&121dsa2d41sa2d1sa2x2x4asd2sa1xas45dx1as2").
+        $http.get($scope.servidor + $scope.ROUTE_CAD_USER + JSON.stringify(user)).
 
         success(function (data, status, headers, config) {
 
-            console.log(data);
+            if (data == "DATABASEERROR")
+            {
+                alert("Email indisponivel");
+                return;
+            }
 
             for (var i = 0; i < $scope.contacts.length ; i++) {
 
-                $scope.contacts[i].usuario_id = data;
+                $scope.contacts[i].user_id = data;
 
                 $http.get($scope.servidor + $scope.ROUTE_CAD_CONT + JSON.stringify($scope.contacts[i])).
 
@@ -30,6 +35,10 @@
                     });
 
             }
+
+            alert("Usuário cadastrado com sucesso");
+
+            $location.path("/login");
 
         }).
 

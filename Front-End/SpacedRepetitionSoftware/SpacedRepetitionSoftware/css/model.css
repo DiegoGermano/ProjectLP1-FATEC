@@ -1,0 +1,36 @@
+﻿p{
+    margin-top:0px;
+}
+
+.modal-container{
+
+    position:fixed;
+    background-color:#fff;
+    border:1px solid #000;
+    left:50%;
+    padding:20px;
+    border-radius:5px;
+    width:600px;
+    max-width:600px;
+    -webkit-transform:translate(-50%, -100%);
+    -ms-transform:translate(-50%,-100%);
+    transform:translate(-50%,-100%);
+
+}
+
+.modal-container input[type="submit"]{
+    float:right;
+    margin-top:40px;
+    margin-right:5px;
+}
+
+.modal:before{
+    content:"";
+    position:fixed;
+    background-color:rgba(0,0,0,.6);
+    top:0;
+    left:0;
+    height:100%;
+    width:100%;
+}
+

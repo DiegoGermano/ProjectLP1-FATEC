@@ -1,47 +1,124 @@
 ﻿<div class="full-form">
-    <h1>Baralhos</h1>
 
-    <form name="deckForm">
+    <input type="submit" value="New Deck" id="btnNewDeck">
 
-        <div class="input-group">
-            <input ng-model="deck.descricao" type="text">
-            <label>Descricao</label>
+    <h2>My decks</h2>
+
+    <table class="responsive">
+
+
+        <thead>
+            <tr>
+                <th ng-show="false">Id</th>
+                <th>description</th>
+                <th>Language</th>
+                <th>Days</th>
+                <th>AmountWord</th>
+                <th>AmountStudy</th>
+                <th>Options</th>
+            </tr>
+
+        </thead>
+        <tbody>
+            <tr ng-repeat="x in decks">
+                <td ng-show="false">{{x.id}}</td>
+                <td>{{x.description}}</td>
+                <td>{{x.language}}</td>
+                <td>{{x.daysLastStudy}}</td>
+                <td>{{x.amountWord}}</td>
+                <td>{{x.amountStudy}}</td>
+                <td>
+                    <button type="submit" id="btnNewWord" ng-click="Study(x)">Estudar</button>
+                    <button type="submit" id="btnNewWord" ng-click="AddWord(x)" >Add frase</button>
+                    <button type="submit" id="btnNewWord" ng-click="History(x)">Historico</button>
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+
+    <div class="modal" id="divNewDeck" style="display:none">
+
+        <div class="modal-container">
+
+            <h1>Baralhos</h1>
+
+            <form name="deckForm">
+
+                <div class="input-group">
+                    <input ng-model="deck.description" type="text">
+                    <label>Descricao</label>
+                </div>
+
+                <div class="input-group">
+                    <input  type="text">
+                    <label>Dificuldade</label>
+                </div>
+
+                <div class="input-group">
+                    <input  type="text">
+                    <label>Idioma</label>
+                </div>
+
+
+                <input type="submit" ng-click="cadastrarDeck(deck)" value="Cadastrar">
+                <input type="submit" value="Cancelar" id="btnCancelarDeck">
+            </form>
         </div>
 
-        <div class="input-group">
-            <input ng-model="deck.dificuldade" type="text">
-            <label>Dificuldade</label>
+    </div>
+
+    <div class="modal" id="divNewWord" style="display:none">
+
+        <div class="modal-container">
+
+            <h1>Frases</h1>
+
+            <form name="wordForm">
+
+                <div class="input-group">
+                    <input ng-model="word.front" type="text">
+                    <label>Front</label>
+                </div>
+
+                <div class="input-group">
+                    <input ng-model="word.back" type="text">
+                    <label>Back</label>
+                </div>
+
+                <input type="submit" ng-click="cadastrarWord(word)" value="Cadastrar" />
+                <input type="submit" value="Cancelar" id="btnCancelarWord">
+
+            </form>
+
         </div>
 
-        <div class="input-group">
-            <input ng-model="deck.idioma" type="text">
-            <label>Idioma</label>
+    </div>
+
+    <div class="modal" id="divStudy" style="display:none">
+
+        <div class="modal-container">
+
+            <h1>Study buddy :)</h1>
+
+            <input type="submit" value="Cancelar" id="btnCancelarStudy">
+
+
         </div>
 
-        <input type="submit" ng-click="cadastrarDeck(deck)" value="Cadastrar"> 
+    </div>
 
-    </form>
+    <div class="modal" id="divHistory" style="display:none">
 
-    <h1>Frases</h1>
+        <div class="modal-container">
 
-    <form name="wordForm">
+            <h1>History buddy :)</h1>
 
-        <div class="input-group">
-            <input ng-model="word.front" type="text">
-            <label>Front</label>
+            <input type="submit" value="Cancelar" id="btnCancelarHistory">
+
+
         </div>
 
-        <div class="input-group">
-            <input ng-model="word.back" type="text">
-            <label>Back</label>
-        </div>
+    </div>
 
-        <div class="input-group">
-            <input ng-model="word.nivel" type="number">
-            <label>Nivel</label>
-        </div>
-
-        <input type="submit" ng-click="cadastrarWord(word)" value="Cadastrar" />
-
-    </form>
 </div>

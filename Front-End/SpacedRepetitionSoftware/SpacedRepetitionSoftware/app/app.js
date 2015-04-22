@@ -7,10 +7,15 @@ app.config(function ($routeProvider, $locationProvider) {
 
     $routeProvider
 
-    .when('/', {
-        templateUrl: 'app/views/home.html',
-        controller: 'homeController',
-    })
+    //.when('/', {
+    //    templateUrl: 'app/views/home.html',
+    //    controller: 'homeController',
+    //})
+
+       .when('/', {
+           templateUrl: 'app/views/domain.html',
+           controller: 'domainController',
+       })
 
     .when('/login', {
         templateUrl: 'app/views/login.html',
@@ -26,7 +31,11 @@ app.config(function ($routeProvider, $locationProvider) {
         templateUrl: 'app/views/domain.html',
         controller: 'domainController',
     })
-
     // caso não seja nenhum desses, redirecione para a rota '/'
     .otherwise({ redirectTo: '/' });
+})
+.factory('UserService', function () {
+    return {
+        token: 'empty'
+    };
 });
