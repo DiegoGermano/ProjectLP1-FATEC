@@ -2,46 +2,9 @@
 
     <input type="submit" value="New Deck" id="btnNewDeck">
 
-    <h2>My decks</h2>
-
-    <table class="responsive">
-
-
-        <thead>
-            <tr>
-                <th ng-show="false">Id</th>
-                <th>description</th>
-                <th>Language</th>
-                <th>Days</th>
-                <th>AmountWord</th>
-                <th>AmountStudy</th>
-                <th>Options</th>
-            </tr>
-
-        </thead>
-        <tbody>
-            <tr ng-repeat="x in decks">
-                <td ng-show="false">{{x.id}}</td>
-                <td>{{x.description}}</td>
-                <td>{{x.language}}</td>
-                <td>{{x.daysLastStudy}}</td>
-                <td>{{x.amountWord}}</td>
-                <td>{{x.amountStudy}}</td>
-                <td>
-                    <button type="submit" id="btnNewWord" ng-click="Study(x)">Estudar</button>
-                    <button type="submit" id="btnNewWord" ng-click="AddWord(x)" >Add frase</button>
-                    <button type="submit" id="btnNewWord" ng-click="History(x)">Historico</button>
-                </td>
-            </tr>
-        </tbody>
-
-    </table>
-
     <div class="modal" id="divNewDeck" style="display:none">
 
         <div class="modal-container">
-
-            <h1>Baralhos</h1>
 
             <form name="deckForm">
 
@@ -51,12 +14,12 @@
                 </div>
 
                 <div class="input-group">
-                    <input  type="text">
+                    <input type="text">
                     <label>Dificuldade</label>
                 </div>
 
                 <div class="input-group">
-                    <input  type="text">
+                    <input type="text">
                     <label>Idioma</label>
                 </div>
 
@@ -72,8 +35,6 @@
 
         <div class="modal-container">
 
-            <h1>Frases</h1>
-
             <form name="wordForm">
 
                 <div class="input-group">
@@ -86,8 +47,11 @@
                     <label>Back</label>
                 </div>
 
-                <input type="submit" ng-click="cadastrarWord(word)" value="Cadastrar" />
-                <input type="submit" value="Cancelar" id="btnCancelarWord">
+                <div>
+
+                    <input type="submit" ng-click="cadastrarWord(word)" value="Adicionar" />
+                    <input type="submit" value="Cancelar" id="btnCancelarWord">
+                </div>
 
             </form>
 
@@ -99,9 +63,14 @@
 
         <div class="modal-container">
 
-            <h1>Study buddy :)</h1>
+            <h1>Front>> {{study_wordfront}}</h1>
+            <h1 ng-show="showBack == true">Back>>  {{study_wordback}}</h1>
 
             <input type="submit" value="Cancelar" id="btnCancelarStudy">
+
+            <input type="submit" ng-click="Next()" value="Next" id="btnNext">
+            <input ng-click="showBack = true" type="submit" value="I Forgot :(" id="btnShow">
+
 
 
         </div>
@@ -120,5 +89,39 @@
         </div>
 
     </div>
+
+    <table class="responsive">
+
+
+        <thead>
+            <tr>
+                <th ng-show="false">Id</th>
+                <th>description</th>
+                <th>Language</th>
+                <th>Days</th>
+                <th>AmountWord</th>
+                <th>AmountStudy</th>
+                <th></th>
+            </tr>
+
+        </thead>
+        <tbody>
+            <tr ng-repeat="x in decks">
+                <td ng-show="false">{{x.id}}</td>
+                <td>{{x.description}}</td>
+                <td>{{x.language}}</td>
+                <td>{{x.daysLastStudy}}</td>
+                <td>{{x.amountWord}}</td>
+                <td>{{x.amountStudy}}</td>
+                <td>
+                    <button type="submit" id="btnNewWord" ng-click="Study(x)">Estudar</button>
+                    <button type="submit" id="btnNewWord" ng-click="AddWord(x)">Add frase</button>
+                    <button type="submit" id="btnNewWord" ng-click="History(x)">Historico</button>
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+
 
 </div>

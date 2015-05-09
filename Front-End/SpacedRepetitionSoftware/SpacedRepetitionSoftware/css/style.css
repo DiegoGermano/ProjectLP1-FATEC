@@ -2,52 +2,74 @@
     margin: 0;
     padding: 0;
     -webkit-font-smmothing: antialiased;
+    background: url(../images/landscape_isolated@1x_mv_c1c8786fa33cbd6b396e57fa06719d6f.png) no-repeat bottom center fixed #e9e9e9;
 }
 
 header {
-    background: #00795f;
+    background: #1caff6;
     width: 100%;
-    padding: 40px 0;
+    padding: 20px 0;
     color: white;
-    text-align:center;
+    text-align: center;
+    font-family: sans-serif;
 }
 
-a{
-    text-decoration:none;
+a {
+    text-decoration: none;
     color: inherit;
 }
 
 nav ul {
-
-    background-color: #43a286;
-    overflow:hidden;
+    background-color: #1caff6;
+    overflow: hidden;
     color: white;
-    padding:0;
+    padding: 0;
     text-align: center;
-    margin:0;
-
+    margin: 0;
+    font-family: sans-serif;
+    font-size: 18px;
     -webkit-transition: max-height 0.4s;
     -ms-transition: max-height 0.4s;
     -moz-transition: max-height 0.4s;
     -o-transition: max-height 0.4s;
     transition: max-height 0.4s;
-
 }
 
     nav ul li {
         display: inline-block;
-        padding:20px;
+        padding: 18px 40px;
+        border-radius: 200px;
     }
 
-    nav ul li:hover{
-        background-color: #399077;
-    }
+        nav ul li:hover {
+            background-color: #21a1e1;
+        }
 
-section{
-    padding:40px;
-    width:75%;
-    margin:0 auto;
+section {
+    padding: 40px;
+    width: 75%;
+    margin: 0 auto;
 }
+
+
+
+button {
+    background: none;
+    border: solid 2px #21a1e1;
+    color: #21a1e1;
+    width:90px;
+    padding: 10px 10px;
+    font-size: 13px;
+    display: inline-block;
+    border-radius: 200px;
+}
+
+    button:hover {
+        background-color: #21a1e1;
+        color:#fff;
+    }
+
+
 
 input {
     background: none;
@@ -67,10 +89,14 @@ input {
         border-bottom: solid 2px #21a1e1;
     }
 
-    input[type="submit"]:active {
-        color: white;
-        background: #21a1e1;
+    input[type="submit"] {
+        border-radius: 200px;
     }
+
+        input[type="submit"]:active {
+            color: white;
+            background: #21a1e1;
+        }
 
 .input-group {
     display: inline-block;
@@ -103,32 +129,41 @@ input {
         transition: all 0.15s ease-out 0s;
     }
 
-.handle{
-    width:100%;
+.handle {
+    width: 100%;
     background: #005c48;
-    text-align:left;
-    box-sizing:border-box;
-    padding:15px 10px;
+    text-align: left;
+    box-sizing: border-box;
+    padding: 15px 10px;
     cursor: pointer;
     color: white;
-    display:none;
-
+    display: none;
 }
 
-@media screen and (max-width: 580px){
+@media screen and (max-width: 580px) {
     nav ul {
-        max-height:0;
+        max-height: 0;
     }
-    .showing{
-        max-height:20em;
+
+    .showing {
+        max-height: 20em;
     }
-    nav ul li{
+
+    nav ul li {
         box-sizing: border-box;
-        width:100%;  
-        padding:15px;
-        text-align:left;
+        width: 100%;
+        padding: 15px;
+        text-align: left;
     }
+
     .handle {
-        display:block;
+        display: block;
     }
+}
+
+
+
+.full-form h2{
+    text-align:center;
+    font-fa mily: sans-serif;
 }

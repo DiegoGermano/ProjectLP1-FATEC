@@ -115,3 +115,14 @@ select
 
 from deck 
 INNER JOIN Language on deck.Language_Id = language.id
+
+
+CREATE VIEW view_word 
+AS
+	select
+		CONCAT('{"id":', Id) as Id,
+		CONCAT(',"Back":"', Back, '"') as Back,
+		CONCAT(',"Front":"', Front, '"}') as Front,
+		deck_id
+	from word
+

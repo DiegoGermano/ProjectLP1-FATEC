@@ -3,19 +3,20 @@
 }
 
 .modal-container{
-
+ 
     position:fixed;
     background-color:#fff;
     border:1px solid #000;
     left:50%;
     padding:20px;
+    padding-top:70px;
     border-radius:5px;
-    width:600px;
-    max-width:600px;
-    -webkit-transform:translate(-50%, -100%);
-    -ms-transform:translate(-50%,-100%);
-    transform:translate(-50%,-100%);
+    width:800px;
+    max-width:800px;
 
+    -webkit-transform:translate(-50%, -30%);
+    -ms-transform:translate(-50%,-30%);
+    transform:translate(-50%,-30%);
 }
 
 .modal-container input[type="submit"]{

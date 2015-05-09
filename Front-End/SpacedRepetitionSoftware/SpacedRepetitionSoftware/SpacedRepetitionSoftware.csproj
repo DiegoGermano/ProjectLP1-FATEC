@@ -73,6 +73,7 @@
     <Content Include="app\views\user.html" />
     <Content Include="css\tables.css" />
     <Content Include="css\style.css" />
+    <Content Include="images\landscape_isolated%401x_mv_c1c8786fa33cbd6b396e57fa06719d6f.png" />
     <Content Include="index.html" />
     <Content Include="js\angular-route.js" />
     <Content Include="js\angular.min.js" />
@@ -80,9 +81,7 @@
   <ItemGroup>
     <Content Include="js\angular.min.js.map" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="images\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="js\global.js" />
     <Content Include="js\jquery.js" />
