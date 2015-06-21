@@ -1,15 +1,23 @@
 
 void CreateDeck(char *str)
 {
-    char *cmdInsert = buildCmdInsert(str , "Deck");
+    char *cmdInsert = buildCmdInsert(str ,"Deck");
 
     printf("DECKCREATED %s", cmdInsert);
     MYSQL *con = OpenConnection();
 
     ExecCommand(con, cmdInsert);
+}
 
+void CreateHistory(char *str)
+{
+    char *cmdInsert = buildCmdInsert(str , "historydeck");
 
+    printf("HISTORYDECKCREATED %s", cmdInsert);
 
+    MYSQL *con = OpenConnection();
+
+    ExecCommand(con, cmdInsert);
 }
 
 void CreateWord(char *str)
@@ -27,9 +35,7 @@ void CreateWord(char *str)
 
 void CreateUser(char *str)
 {
-
     char *cmdInsert = buildCmdInsert(str , "User");
-
     MYSQL *con = OpenConnection();
 
     ExecCommand(con, cmdInsert);
@@ -71,6 +77,10 @@ void Create(char *str)
     if(str[4] == 'd' && str[5] == 'e' && str[6] == 'c' && str[7] == 'k' && str[8] == '/')
     {
        CreateDeck(str);
+    }
+    else if(str[4] == 's' && str[5] == 't' && str[6] == 'u' && str[7] == 'y' && str[8] == '/')
+    {
+       CreateHistory(str);
     }
     else if(str[4] == 'w' && str[5] == 'o' && str[6] == 'r' && str[7] == 'd' && str[8] == '/')
     {

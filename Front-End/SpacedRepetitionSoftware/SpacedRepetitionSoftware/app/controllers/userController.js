@@ -12,33 +12,38 @@
 
     $scope.cadastrarUser = function (user) {
 
+        alert("");
+
+
         $http.get($scope.servidor + $scope.ROUTE_CAD_USER + JSON.stringify(user)).
 
         success(function (data, status, headers, config) {
 
+            
             if (data == "DATABASEERROR")
             {
                 alert("Email indisponivel");
                 return;
             }
 
-            for (var i = 0; i < $scope.contacts.length ; i++) {
+            $("#divUser").hide(100);
+            $("#divLogin").show(100);
+            $("#lb_fisttimelogin").show();
 
-                $scope.contacts[i].user_id = data;
 
-                $http.get($scope.servidor + $scope.ROUTE_CAD_CONT + JSON.stringify($scope.contacts[i])).
+            //for (var i = 0; i < $scope.contacts.length ; i++) {
 
-                    success(function (data, status, headers, config) {
+            //    $scope.contacts[i].user_id = data;
 
-                        console.log(data);
+            //    $http.get($scope.servidor + $scope.ROUTE_CAD_CONT + JSON.stringify($scope.contacts[i])).
 
-                    });
+            //        success(function (data, status, headers, config) {
 
-            }
+            //            console.log(data);
 
-            alert("Usuário cadastrado com sucesso");
+            //        });
 
-            $location.path("/login");
+            //}
 
         }).
 
@@ -48,6 +53,13 @@
             alert('erro: ' + data);
 
         });
+    };
+
+    $scope.btnCancelarRegister = function () {
+
+
+        $("#divUser").hide(200);
+
     };
   
     //Manipulations contact

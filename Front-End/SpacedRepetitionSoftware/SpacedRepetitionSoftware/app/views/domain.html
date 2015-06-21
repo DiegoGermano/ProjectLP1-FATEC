@@ -1,6 +1,17 @@
-﻿<div class="full-form">
+﻿
 
-    <input type="submit" value="New Deck" id="btnNewDeck">
+<div class="full-form">
+
+    <div class="modal" id="divDelete" style="display:none">
+
+        <div class="modal-container">
+            <h1>Tem certeza que deseja excluir esse deck?</h1>
+            <form name="deleteForm">
+                <input type="submit" ng-click="confirmDelete()" value="OK">
+                <input type="submit" ng-click="cancelDelete()" value="Cancelar" id="btnCalncelDelete">
+            </form>
+        </div>
+    </div>
 
     <div class="modal" id="divNewDeck" style="display:none">
 
@@ -61,15 +72,15 @@
 
     <div class="modal" id="divStudy" style="display:none">
 
-        <div class="modal-container">
+        <div align="center" style="font-family:'Lato',sans-serif !important;word-spacing: .1em;font-size: 25px;" class="modal-container">
 
-            <h1>Front>> {{study_wordfront}}</h1>
-            <h1 ng-show="showBack == true">Back>>  {{study_wordback}}</h1>
+            <h1 >{{study_wordfront}}</h1>
+            <h1 ng-show="showBack == true">{{study_wordback}}</h1>
 
             <input type="submit" value="Cancelar" id="btnCancelarStudy">
 
             <input type="submit" ng-click="Next()" value="Next" id="btnNext">
-            <input ng-click="showBack = true" type="submit" value="I Forgot :(" id="btnShow">
+            <input ng-click="btnForgot()" type="submit" value="I Forgot :(">
 
 
 
@@ -77,51 +88,49 @@
 
     </div>
 
-    <div class="modal" id="divHistory" style="display:none">
+    <div class="modalchart" id="divHistory" style="display:none">
+        <div class="modalchart-container">
 
-        <div class="modal-container">
+            <div id="divChart" style="height: 250px;"></div>
 
-            <h1>History buddy :)</h1>
-
-            <input type="submit" value="Cancelar" id="btnCancelarHistory">
-
+            <input type="submit" value="Fechar" id="btnCancelarHistory">
 
         </div>
-
     </div>
 
-    <table class="responsive">
+    <div class="responsivetable">
+        <table class="responsive">
 
 
-        <thead>
-            <tr>
-                <th ng-show="false">Id</th>
-                <th>description</th>
-                <th>Language</th>
-                <th>Days</th>
-                <th>AmountWord</th>
-                <th>AmountStudy</th>
-                <th></th>
-            </tr>
+            <thead>
+                <tr>
+                    <th ng-show="false">Id</th>
+                    <th>Descrição</th>
+                    <th>Idioma</th>
+                    <th>Dias</th>
+                    <th>Frases</th>
+                    <th>Estudos</th>
+                    <th></th>
+                </tr>
 
-        </thead>
-        <tbody>
-            <tr ng-repeat="x in decks">
-                <td ng-show="false">{{x.id}}</td>
-                <td>{{x.description}}</td>
-                <td>{{x.language}}</td>
-                <td>{{x.daysLastStudy}}</td>
-                <td>{{x.amountWord}}</td>
-                <td>{{x.amountStudy}}</td>
-                <td>
-                    <button type="submit" id="btnNewWord" ng-click="Study(x)">Estudar</button>
-                    <button type="submit" id="btnNewWord" ng-click="AddWord(x)">Add frase</button>
-                    <button type="submit" id="btnNewWord" ng-click="History(x)">Historico</button>
-                </td>
-            </tr>
-        </tbody>
+            </thead>
+            <tbody>
+                <tr ng-repeat="x in decks">
+                    <td ng-show="false">{{x.id}}</td>
+                    <td>{{x.description}}</td>
+                    <td>{{x.language}}</td>
+                    <td>{{x.daysLastStudy}}</td>
+                    <td>{{x.amountWord}}</td>
+                    <td><a href="#" ng-click="History(x)">{{x.amountStudy}}</a></td>
+                    <td>
+                        <button type="submit" id="btnNewWord" ng-click="Study(x)">Estudar</button>
+                        <button type="submit" id="btnNewWord" ng-click="AddWord(x)">Add Frase</button>
+                        <button type="submit" id="btnDelete" ng-click="Delete(x)">Apagar</button>
+                    </td>
+                </tr>
+            </tbody>
 
-    </table>
-
+        </table>
+    </div>
 
 </div>

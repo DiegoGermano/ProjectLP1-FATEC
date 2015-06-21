@@ -14,24 +14,33 @@ $(function () {
 
 function initializeJQueryEvents() {
 
+    
+    $("#btnRegister").click(function () {
+        $("#divUser").show(200);
+    });
+
+    $("#btnLogin").click(function () {
+        $("#divLogin").show(200);
+    });
+
     $("#btnNewDeck").click(function () {
-        $("#divNewDeck").show(50);
+        $("#divNewDeck").show(200);
     });
 
     $("#btnCancelarDeck").click(function () {
-        $("#divNewDeck").hide(50);
+        $("#divNewDeck").hide(200);
     });
 
     $("#btnCancelarWord").click(function () {
-        $("#divNewWord").hide(50);
+        $("#divNewWord").hide(200);
     });
 
     $("#btnCancelarStudy").click(function () {
-        $("#divStudy").hide(50);
+        $("#divStudy").hide(200);
     });
 
     $("#btnCancelarHistory").click(function () {
-        $("#divHistory").hide(50);
+        $("#divHistory").hide(200);
     });
 
     $('.full-form .input-group input').focusout(function () {

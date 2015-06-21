@@ -1,8 +1,8 @@
 ﻿<!DOCTYPE html>
 
-<!--<script src="js/angular.min.js"></script>
+<script src="js/angular.min.js"></script>
 <script src="js/angular.min.js.map"></script>
-<script src="js/angular-route.js"></script>-->
+<script src="js/angular-route.js"></script>
 
 <html ng-app="app">
 
@@ -10,10 +10,14 @@
 
     <title>title</title>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+    <!--<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>-->
 
- 
+    <script src="js/jquery.min.js"></script>
+
+    <script src="js/raphael-min.js"></script>
+    <script src="js/morris.min.js"></script>
+
 
     <script src="app/app.js"></script>
     <script src="app/controllers/domainController.js"></script>
@@ -22,20 +26,19 @@
     <script src="app/controllers/userController.js"></script>
     <script src="app/controllers/menuController.js"></script>
 
+    <link href="css/morris.css" rel="stylesheet" type="text/css" />
     <link href="css/model.css" rel="stylesheet" type="text/css" />
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <link href="css/tables.css" rel="stylesheet" type="text/css">
-
-    
 
 </head>
 
 <body>
 
-    <header>
+    <header >
 
-        <h1>
-            Easy way
+        <h1 style="text-align:left; margin-left:15px; font-family:'Lato',sans-serif !important;word-spacing: .1em;font-size: 35px;">
+            Repetição Espaçada
         </h1>
 
     </header>
@@ -45,18 +48,74 @@
         <nav id="menu">
 
             <ul ng-show="UserService.token == 'empty'">
-                <li ng-class="{active: activetab == '/'}"><a href="/home">Home</a></li>
-                <li ng-class="{active: activetab == '/login'}"><a href="/login">Login</a></li>
-                <li ng-class="{active: activetab == '/user'}"><a href="/user">Register</a></li>
+                <li id="btnLogin"><a href="#">Login</a></li>
+                <li id="btnRegister"><a href="#">Criar Conta</a></li>
             </ul>
             <ul ng-show="UserService.token != 'empty'">
-                <li ng-class="{active: activetab == '/domain'}"><a href="/domain">Decks</a></li>
-                <li ng-class="{active: activetab == '/cadastre'}"><a href="/cadastre">New Deck</a></li>
+                <li id="btnNewDeck"><a href="#">Novo Deck</a></li>
+                <li ng-click="UserService.token = 'empty'" ng-class="{active: activetab == '/'}"><a href="/">Sair</a></li>
             </ul>
 
             <div class="handle">Menu</div>
         </nav>
+    </div>
 
+    <div class="full-form" ng-controller="loginController">
+
+        <div class="modal" id="divLogin" style="display:none">
+
+            <div class="modal-container">
+                <form name="loginForm">
+
+                    <div class="input-group">
+                        <input ng-model="user.email" type="text">
+                        <label>Email</label>
+                    </div>
+
+                    <div class="input-group">
+                        <input ng-model="user.password" type="password">
+                        <label>Senha</label>
+                    </div>
+
+
+                    <input type="submit" ng-click="logIn(user)" value="Logar" />
+                    <input type="submit" ng-click="btnCancelarLogin()" value="Cancelar" />
+                    <div id="lb_invalidlogin" style="display:none; margin-top:50px; color:red"><span>Login inválido!</span></div>
+                    <div id="lb_fisttimelogin" style="display:none; margin-top:50px; color:green"><strong>Pronto, agora só logar e já começamos :)</strong></div>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="full-form" ng-controller="userController">
+
+        <div class="modal" id="divUser" style="display:none">
+            <div class="modal-container">
+                <form name="userForm">
+
+                    <div class="input-group">
+                        <input ng-model="user.name" type="text" required>
+                        <label>Nome</label>
+                    </div>
+
+                    <div class="input-group">
+                        <input ng-model="user.email" type="email" required>
+                        <label>Email</label>
+                    </div>
+
+                    <div class="input-group">
+                        <input ng-model="user.password" type="password" required>
+                        <label>Senha</label>
+                    </div>
+
+                    <input type="submit" ng-click="cadastrarUser(user)" value="Cadastrar " />
+                    <input type="submit" ng-click="btnCancelarRegister()" value="Cancelar" />
+
+                </form>
+            </div>
+        </div>
     </div>
 
 
@@ -69,11 +128,13 @@
     <footer class="text-center"></footer>
 
 
-  
+
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
     <script src="js/global.js"></script>
 
+    <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Lato%3A300%2C400%2C700%2C400italic%7CMontserrat%3A700%7CHomemade+Apple&#038;ver=4.0.1' type='text/css' media='all' />
+    <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&#038;subset=latin%2Clatin-ext&#038;ver=4.0.1' type='text/css' media='all' />
 
 </body>
 

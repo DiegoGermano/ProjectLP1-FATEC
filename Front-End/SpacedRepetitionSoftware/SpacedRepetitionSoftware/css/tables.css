@@ -7,11 +7,15 @@ table {
     border-spacing: 0;
 }
 
+
+
 td, th {
     border: 1px solid #CCC;
     height: 30px;
     white-space: nowrap;
 }
+
+
 
 th {
     background: #F3F3F3;

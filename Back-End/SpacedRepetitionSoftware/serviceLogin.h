@@ -70,7 +70,7 @@ void Login(char *str)
 
         ExecCommand(con, cmdInsert);
 
-        printf("\n\Without erros teste fatec :)  %s", token);
+        printf(user_id);
 
          mysql_free_result(result);
         mysql_close(con);

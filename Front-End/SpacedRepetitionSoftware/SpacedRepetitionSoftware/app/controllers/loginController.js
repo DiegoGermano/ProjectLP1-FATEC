@@ -1,6 +1,5 @@
 ﻿app.controller('loginController', function ($scope, $http, $location, UserService) {
 
-    initializeJQueryEvents();
 
     $scope.servidor = 'http://127.0.0.1:82/cgi-bin/SpacedRepetitionSoftware.exe?';
 
@@ -14,15 +13,19 @@
             
             
             if (data.indexOf("denied") > -1) {
-                alert("Usuario ou senha invalido");
+
+                $("#lb_invalidlogin").hide(50);
+                $("#lb_invalidlogin").show("slow");
+                $("#lb_fisttimelogin").hide();
                 return;
             }
 
             UserService.token = data;
 
+            console.log(data);
+
+            $("#divLogin").hide(100);
             $location.path("/domain");
-
-
         }).
 
         error(function (data, status, headers, config) {
@@ -32,6 +35,13 @@
         });
     };
 
+    $scope.btnCancelarLogin = function () {
+
+        $("#divLogin").hide(200);
+
+    };
+
+    initializeJQueryEvents();
 
 });
 

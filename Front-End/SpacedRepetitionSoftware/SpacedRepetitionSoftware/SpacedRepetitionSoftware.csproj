@@ -71,8 +71,10 @@
     <Content Include="app\views\home.html" />
     <Content Include="app\views\login.html" />
     <Content Include="app\views\user.html" />
+    <Content Include="css\morris.css" />
     <Content Include="css\tables.css" />
     <Content Include="css\style.css" />
+    <Content Include="images\international.png" />
     <Content Include="images\landscape_isolated%401x_mv_c1c8786fa33cbd6b396e57fa06719d6f.png" />
     <Content Include="index.html" />
     <Content Include="js\angular-route.js" />
@@ -85,6 +87,9 @@
   <ItemGroup>
     <Content Include="js\global.js" />
     <Content Include="js\jquery.js" />
+    <Content Include="js\jquery.min.js" />
+    <Content Include="js\morris.min.js" />
+    <Content Include="js\raphael-min.js" />
     <Content Include="web.config" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>

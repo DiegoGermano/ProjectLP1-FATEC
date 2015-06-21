@@ -7,15 +7,10 @@ app.config(function ($routeProvider, $locationProvider) {
 
     $routeProvider
 
-    //.when('/', {
-    //    templateUrl: 'app/views/home.html',
-    //    controller: 'homeController',
-    //})
-
-       .when('/', {
-           templateUrl: 'app/views/domain.html',
-           controller: 'domainController',
-       })
+    .when('/', {
+        templateUrl: 'app/views/home.html',
+        controller: 'homeController',
+    })
 
     .when('/login', {
         templateUrl: 'app/views/login.html',

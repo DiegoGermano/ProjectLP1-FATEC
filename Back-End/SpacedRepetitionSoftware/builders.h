@@ -210,7 +210,7 @@ char * buildCmdDelete(char *value, char *table)
 
     char newValue[strlen(value)];
 
-	for(i=10; i<= strlen(value)  ; i++)
+	for(i=9; i<= strlen(value)  ; i++)
 	{
         newValue[j] = value[i];
         j++;
